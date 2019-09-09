@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meine erste Seite mit JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<p>Ein erster Veruch</p>
+<script>
+    var g = 9.81, v0, derWinkel, Wurfweite, i;
+    var entfernungZumMonster = Math.random() * 90 + 10;
+    entfernungZumMonster = Math.round(entfernungZumMonster);
+    alert("Das Monster ist " + (entfernungZumMonster) + " Meter weit entfernt.");
+    for (var i = 0; i < 4; i++) {
+        v0 = prompt("Gib hier die Anfangsgeschwindigkeit ein (try: " + i + ")", "v0");
+        derWinkel = prompt("Gib hier den Winkel ein", "ganze Zahl zwischen 0 und 90");
+        derWinkel = derWinkel * (Math.PI / 180);
+        Wurfweite = ((v0 * v0) * Math.sin(2 * derWinkel)) / g;
+        Wurfweite = Math.round(Wurfweite);
+        alert(Wurfweite);
+        if (Wurfweite == entfernungZumMonster) {
+            alert("Du hast das Monster getroffen.");
+        }
+    }​
+</script>
+</body>
+</html>
